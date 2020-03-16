@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62e0b4a9-22b6-44e3-970c-140fc60b6fc2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Catalog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CatalogUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CatalogUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +74,7 @@
       <workItem from="1584344952159" duration="2622000" />
       <workItem from="1584358446562" duration="611000" />
       <workItem from="1584361303515" duration="7591000" />
+      <workItem from="1584369325129" duration="352000" />
     </task>
     <servers />
   </component>
@@ -100,29 +98,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584358456595" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1584369211521">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1584369678417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584369211521" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1584369211520">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584369678417" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1584369678417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584369211520" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1584369211520">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584369678417" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1584369678417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584369211520" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1584369211521">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584369678417" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1584369678417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584369211521" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584369678417" />
     <state x="184" y="0" key="SettingsEditor" timestamp="1584302172047">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584302172047" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1584358450955">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1584369328303">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584358450955" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584369328303" />
   </component>
 </project>

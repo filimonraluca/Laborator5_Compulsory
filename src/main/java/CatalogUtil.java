@@ -10,6 +10,7 @@ public class CatalogUtil {
     /**
      * Salveaza catalogul primit ca parametru
      * intr-un fisier extern.
+     *  @param  catalog catalogul care trebuie salvat
      */
     public static void save(Catalog catalog)
             throws IOException {
@@ -22,6 +23,9 @@ public class CatalogUtil {
 
     /**
      * Incarca catalogul dintr-un fisier extern
+     * si il returneaza.
+     * @param  path  adresa de la care se citeste
+     * @return catalogul citit
      */
 
     public static Catalog load(String path)
@@ -37,12 +41,13 @@ public class CatalogUtil {
     }
 
     /**
-     * Deschide documentul
+     * Deschide documentul folosind metoda open sau browse
+     * in functie de tipul locatiei.
+     * @param  doc documentul ce trebuie deschis pentru vizualizare
      */
 
     public static void view(Document doc) {
         Desktop desktop = Desktop.getDesktop();
-        //… browse or open, depending of the location type
         try {
             if (doc.getLocation().startsWith("http"))
             {
