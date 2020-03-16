@@ -1,0 +1,22 @@
+1. 
+Am creat clasa Document cu atributele id, name si locatie.
+Am creat clasa Catalog cu atributele name, path si o lista de documente.
+Am creat clasa CatalogUtil cu scopul de a realiza operatii asupra clasei Catalog.
+2.
+metoda save:
+	Pentru a salva catalogul intr-un fisier extern folosind object serialization am creat un stream decorator ObjectOutputStream
+care comunica cu un FileOutputStream. Obiectul catalog este scris in fisierul catalog.getpath() folosind metoda
+metoda writeObject. Exceptia IOException care poate aparea datorita unor probleme cu fisierul este aruncata
+mai departe, urmand sa fie rezolvata in main.
+
+metoda load:
+	Pentru a incarca catalogul se foloseste streamul decorator ObjectInputStream care comunica cu FileInputStream.
+Catalogul este citit din fisier prin intermediul metodei readObject().
+Pentru acest punct am creat o noua exceptie InvalidCatalogException. Metoda load arunca aceasta exceptie si este 
+prinsa in main. In metoda load mai pot aparea inca doua excepetii (IOException,ClassNotFoundException) datoria lucrului cu fisiere, dar acestea
+sunt rezolvate in interiorul metodei.
+	
+meloda view
+	Pentru metoda view am verificat tipul locatiei. Daca locatia incepe cu "http" am folosit clasa
+URI si metoda browse din clasa Desktop, altfel am folosit clasa file si metoda open din clasa Desktop.
+In aceasta metoda pot aparea doua exceptii URISyntaxException si IOException pe care le-am rezolvat in interiorul metodei.

@@ -6,6 +6,11 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class CatalogUtil {
+
+    /**
+     * Salveaza catalogul primit ca parametru
+     * intr-un fisier extern.
+     */
     public static void save(Catalog catalog)
             throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(
@@ -13,6 +18,11 @@ public class CatalogUtil {
             oos.writeObject(catalog);
         }
     }
+
+
+    /**
+     * Incarca catalogul dintr-un fisier extern
+     */
 
     public static Catalog load(String path)
             throws InvalidCatalogException {
@@ -26,12 +36,24 @@ public class CatalogUtil {
         }
     }
 
+    /**
+     * Deschide documentul
+     */
+
     public static void view(Document doc) {
         Desktop desktop = Desktop.getDesktop();
         //… browse or open, depending of the location type
         try {
-            URI url = new URI(doc.getLocation());
-            desktop.browse(url);
+            if (doc.getLocation().startsWith("http"))
+            {
+                URI uri = new URI(doc.getLocation());
+                desktop.browse(uri);
+            }
+            else
+            {
+                File file = new File(doc.getLocation());
+                desktop.open(file);
+            }
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }

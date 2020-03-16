@@ -7,19 +7,27 @@ public class Main {
         app.testLoadView();
     }
 
-    private void testCreateSave() throws IOException {
+    private void testCreateSave() {
         Catalog catalog =
                 new Catalog("Java Resources", "./catalog.ser");
         Document doc = new Document("java1", "Java Course 1",
                 "https://profs.info.uaic.ro/~acf/java/slides/en/intro_slide_en.pdf");
         doc.addTag("type", "Slides");
         catalog.add(doc);
-
-        CatalogUtil.save(catalog);
+        try {
+            CatalogUtil.save(catalog);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void testLoadView() throws InvalidCatalogException {
-        Catalog catalog = CatalogUtil.load("./catalog.ser");
+    private void testLoadView()  {
+        Catalog catalog = null;
+        try {
+            catalog = CatalogUtil.load("./catalog.ser");
+        } catch (InvalidCatalogException e) {
+            e.printStackTrace();
+        }
         Document doc = catalog.findById("java1");
         CatalogUtil.view(doc);
     }

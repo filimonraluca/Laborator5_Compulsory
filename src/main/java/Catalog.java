@@ -12,10 +12,18 @@ public class Catalog implements Serializable {
         this.path = path;
     }
 
-    //…
     public void add(Document doc) {
         documents.add(doc);
     }
+
+
+    /**
+     * Parcurge toate documentele din Catalogul curent
+     * si il returneaza pe cel cu id-ul dat ca parametru
+     *
+     * @param  id   un id asociat unui document
+     * @return      documentul cu id-ul specificat
+     */
     public Document findById(String id) {
         for (Document document:documents)
             if (document.getId().equals(id))
