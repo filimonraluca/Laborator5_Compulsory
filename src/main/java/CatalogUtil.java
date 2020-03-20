@@ -1,9 +1,10 @@
 import java.awt.*;
+import java.beans.XMLEncoder;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
+import java.beans.XMLEncoder;
+import java.beans.XMLDecoder;
 
 public class CatalogUtil {
 
@@ -12,14 +13,30 @@ public class CatalogUtil {
      * intr-un fisier extern.
      *  @param  catalog catalogul care trebuie salvat
      */
-    public static void save(Catalog catalog)
+    /*public static void saveSerialized(Catalog catalog)
             throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(
                 new FileOutputStream(catalog.getPath()))) {
             oos.writeObject(catalog);
         }
-    }
+    }*/
 
+
+    public static void save(Catalog catalog) {
+        FileOutputStream fo = null;
+        try {
+            fo = new FileOutputStream(new File(catalog.getPath()));
+            XMLEncoder encoder = new XMLEncoder(fo);
+            encoder.writeObject(catalog);
+            encoder.close();
+            fo.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     /**
      * Incarca catalogul dintr-un fisier extern
@@ -28,7 +45,7 @@ public class CatalogUtil {
      * @return catalogul citit
      */
 
-    public static Catalog load(String path)
+    /*public static Catalog loadSerialized(String path)
             throws InvalidCatalogException {
         try (
                 FileInputStream fileIn = new FileInputStream(path);
@@ -38,7 +55,17 @@ public class CatalogUtil {
         } catch (IOException | ClassNotFoundException e) {
             throw new InvalidCatalogException(e);
         }
+    }*/
+
+    public static Catalog load(String path) throws InvalidCatalogException{
+        try(XMLDecoder decoder = new XMLDecoder(new FileInputStream(path)))
+        {
+            return (Catalog) decoder.readObject();
+        } catch (IOException e){
+            throw new InvalidCatalogException(e);
+        }
     }
+
 
     /**
      * Deschide documentul folosind metoda open sau browse
@@ -59,7 +86,7 @@ public class CatalogUtil {
                 File file = new File(doc.getLocation());
                 desktop.open(file);
             }
-        } catch (URISyntaxException | IOException e) {
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
     }
