@@ -14,6 +14,7 @@ public class CommandView extends Commands{
         args = argumente;
     }
 
+
     private void view(Document doc) {
         Desktop desktop = Desktop.getDesktop();
         try {
@@ -32,10 +33,15 @@ public class CommandView extends Commands{
         }
     }
 
-    public void execute()
-    {
+
+    /**
+     * Executa comanda View folosindu-se de clasa
+     * CatalogUtil pentru incarcarea catalogului
+     * de la path-ul primit ca argument
+     */
+    public void execute  () throws IllegalNrOfArgsException {
         if (args.length != 3) {
-            System.out.println("Nr de argumente ilegal");
+            throw new IllegalNrOfArgsException();
         }
         String path = args[1];
         String id = args[2];

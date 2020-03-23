@@ -3,9 +3,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String args[]) {
-        /*Main app = new Main();
+        Main app = new Main();
         app.testCreateSave();
-        app.testLoadView();*/
+        //app.testLoadView();
         /*try
         {
             app.shellTest(args);
@@ -15,8 +15,13 @@ public class Main {
             e.printStackTrace();
         }*/
 
-        shellTestWithClasses(args);
+       // shellTestWithClasses(args);
     }
+
+    /**
+     * Aceasta metoda permite citirea comenzilor de la
+     * tastatura, identificarea lor si executarea
+     */
 
     private void shellTest(String args[]) throws UnknownCommandException, IllegalNrOfArgsException {
         CatalogUtil catalogUtil = new CatalogUtil();
@@ -29,7 +34,7 @@ public class Main {
             {
                 Catalog catalog = null;
                 try {
-                    catalog = CatalogUtil.load("./catalog.xml");
+                    catalog = CatalogUtil.load(args[1]);
                 } catch (InvalidCatalogException e) {
                     e.printStackTrace();
                 }
@@ -42,11 +47,11 @@ public class Main {
             else{
                 Catalog catalog = null;
                 try {
-                    catalog = CatalogUtil.load("./catalog.xml");
+                    catalog = CatalogUtil.load(args[1]);
                 } catch (InvalidCatalogException e) {
                     e.printStackTrace();
                 }
-                Document doc = catalog.findById("java1");
+                Document doc = catalog.findById(args[2]);
                 CatalogUtil.view(doc);
             }
         }
@@ -57,7 +62,7 @@ public class Main {
             else {
                 Catalog catalog = null;
                 try {
-                    catalog = CatalogUtil.load("./catalog.xml");
+                    catalog = CatalogUtil.load(args[1]);
                 } catch (InvalidCatalogException e) {
                     e.printStackTrace();
                 }
@@ -70,6 +75,13 @@ public class Main {
             throw new UnknownCommandException();
         }
     }
+
+
+    /**
+     * Aceasta metoda permite citirea comenzilor de la
+     * tastatura, identificarea lor si executarea folosind
+     * clasele corespunzatoare (CommandLoad, CommandView, CommandList)
+     */
 
 
     private static void shellTestWithClasses(String[] args)
@@ -103,12 +115,21 @@ public class Main {
     private void testCreateSave() {
         Catalog catalog =
                 new Catalog("Java Resources", "./catalog.xml");
-        Document doc = new Document("java1", "Java Course 1",
+        Document doc1 = new Document("java1", "Java Course 1",
                 "https://profs.info.uaic.ro/~acf/java/slides/en/intro_slide_en.pdf");
-        doc.addTag("type", "Slides");
-        catalog.add(doc);
+        Document doc2 = new Document("java1", "Java Course 1",
+                "https://profs.info.uaic.ro/~acf/java/slides/en/intro_slide_en.pdf");
+        doc1.addTag("type", "Slides");
+        try {
+            catalog.add(doc1);
+            catalog.add(doc2);
+        } catch (NotUniqueIdException e) {
+            e.printStackTrace();
+        }
         CatalogUtil.save(catalog);
     }
+
+
     private void testLoadView()  {
         Catalog catalog = null;
         try {

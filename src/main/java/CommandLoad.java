@@ -9,6 +9,11 @@ public class CommandLoad extends Commands{
           args = argumente;
      }
 
+     /**
+      * Executa comanda Load folosindu-se de clasa
+      * CatalogUtil.
+      */
+
      public void execute() throws IllegalNrOfArgsException {
           if (args.length != 2) {
                throw new IllegalNrOfArgsException();

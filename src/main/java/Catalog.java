@@ -15,7 +15,12 @@ public class Catalog implements Serializable {
         this.path = path;
     }
 
-    public void add(Document doc) {
+    public void add(Document doc) throws NotUniqueIdException{
+        for (Document d:documents)
+        {
+            if(d.getId().equals(doc.getId()))
+                throw new NotUniqueIdException();
+        }
         documents.add(doc);
     }
 
@@ -57,9 +62,16 @@ public class Catalog implements Serializable {
         return path;
     }
 
+    /**
+     * Aceasta metoda creaza un fisier de cu extensia .html
+     * in care scrie informatii despre un catalog folsind
+     * metoda toHtml ce returneaza aceste informatii intre
+     * taguri de paragraf.
+     */
+
     public void reportHtml()
     {
-        File file = new File(".report.html");
+        File file = new File("./report.html");
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(file));
             bw.write(this.toHtml());

@@ -8,12 +8,7 @@ import java.beans.XMLDecoder;
 
 public class CatalogUtil {
 
-    /**
-     * Salveaza catalogul primit ca parametru
-     * intr-un fisier extern.
-     *  @param  catalog catalogul care trebuie salvat
-     */
-    /*public static void saveSerialized(Catalog catalog)
+   /* public static void saveSerialized(Catalog catalog)
             throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(
                 new FileOutputStream(catalog.getPath()))) {
@@ -21,6 +16,12 @@ public class CatalogUtil {
         }
     }*/
 
+
+    /**
+     * Salveaza catalogul primit ca parametru
+     * intr-un fisier XML
+     *  @param  catalog catalogul care trebuie salvat
+     */
 
     public static void save(Catalog catalog) {
         FileOutputStream fo = null;
@@ -38,13 +39,6 @@ public class CatalogUtil {
 
     }
 
-    /**
-     * Incarca catalogul dintr-un fisier extern
-     * si il returneaza.
-     * @param  path  adresa de la care se citeste
-     * @return catalogul citit
-     */
-
     /*public static Catalog loadSerialized(String path)
             throws InvalidCatalogException {
         try (
@@ -56,6 +50,13 @@ public class CatalogUtil {
             throw new InvalidCatalogException(e);
         }
     }*/
+
+    /**
+     * Incarca catalogul dintr-un fisier XML
+     * si il returneaza.
+     * @param  path  adresa de la care se citeste
+     * @return catalogul citit
+     */
 
     public static Catalog load(String path) throws InvalidCatalogException{
         try(XMLDecoder decoder = new XMLDecoder(new FileInputStream(path)))
@@ -73,21 +74,28 @@ public class CatalogUtil {
      * @param  doc documentul ce trebuie deschis pentru vizualizare
      */
 
-    public static void view(Document doc) {
+    public static void view(Document doc){
         Desktop desktop = Desktop.getDesktop();
-        try {
-            if (doc.getLocation().startsWith("http"))
-            {
-                URI uri = new URI(doc.getLocation());
+        if (doc.getLocation().startsWith("http"))
+        {
+            URI uri = null;
+            try {
+                uri = new URI(doc.getLocation());
                 desktop.browse(uri);
+            } catch (URISyntaxException | IOException e) {
+                e.printStackTrace();
             }
-            else
-            {
+        }
+        else
+        {
+            try{
                 File file = new File(doc.getLocation());
-                desktop.open(file);
+            desktop.open(file);
             }
-        } catch (IOException | URISyntaxException e) {
-            e.printStackTrace();
+            catch (IOException e){
+                e.printStackTrace();
+            }
+
         }
     }
 

@@ -11,6 +11,13 @@ public class CommandList extends Commands {
     }
 
 
+    /**
+     * Executa comanda List folosindu-se de clasa
+     * CatalogUtil pentru incarcarea catalogului
+     * de la path-ul primit ca argument. Afiseaza
+     * documentele din catalog.
+     */
+
     @Override
     public void execute() throws IllegalNrOfArgsException {
         if (args.length != 2) {
