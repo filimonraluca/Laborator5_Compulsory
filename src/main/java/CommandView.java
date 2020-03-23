@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class CommandView extends Commands{
+public class CommandView extends Commands {
 
     public CommandView() {
     }
@@ -18,13 +18,10 @@ public class CommandView extends Commands{
     private void view(Document doc) {
         Desktop desktop = Desktop.getDesktop();
         try {
-            if (doc.getLocation().startsWith("http"))
-            {
+            if (doc.getLocation().startsWith("http")) {
                 URI uri = new URI(doc.getLocation());
                 desktop.browse(uri);
-            }
-            else
-            {
+            } else {
                 File file = new File(doc.getLocation());
                 desktop.open(file);
             }
@@ -39,7 +36,7 @@ public class CommandView extends Commands{
      * CatalogUtil pentru incarcarea catalogului
      * de la path-ul primit ca argument
      */
-    public void execute  () throws IllegalNrOfArgsException {
+    public void execute() throws IllegalNrOfArgsException {
         if (args.length != 3) {
             throw new IllegalNrOfArgsException();
         }

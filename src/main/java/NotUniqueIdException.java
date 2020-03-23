@@ -1,5 +1,5 @@
 public class NotUniqueIdException extends Exception {
-    public  NotUniqueIdException(){
+    public NotUniqueIdException() {
         super("Not unique ID for document!");
     }
 }

@@ -41,6 +41,7 @@ public class Document implements Serializable {
     }
 
     private Map<String, Object> tags = new HashMap<>();
+
     public void addTag(String key, Object obj) {
         tags.put(key, obj);
     }

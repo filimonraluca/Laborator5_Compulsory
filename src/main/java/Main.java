@@ -15,7 +15,7 @@ public class Main {
             e.printStackTrace();
         }*/
 
-       // shellTestWithClasses(args);
+        // shellTestWithClasses(args);
     }
 
     /**
@@ -25,13 +25,10 @@ public class Main {
 
     private void shellTest(String args[]) throws UnknownCommandException, IllegalNrOfArgsException {
         CatalogUtil catalogUtil = new CatalogUtil();
-        if (args[0].equals("load"))
-        {
-            if (args.length!=2) {
+        if (args[0].equals("load")) {
+            if (args.length != 2) {
                 throw new IllegalNrOfArgsException();
-            }
-            else
-            {
+            } else {
                 Catalog catalog = null;
                 try {
                     catalog = CatalogUtil.load(args[1]);
@@ -39,12 +36,10 @@ public class Main {
                     e.printStackTrace();
                 }
             }
-        }
-        else if (args[0].equals("view")){
-            if (args.length!=3){
+        } else if (args[0].equals("view")) {
+            if (args.length != 3) {
                 throw new IllegalNrOfArgsException();
-            }
-            else{
+            } else {
                 Catalog catalog = null;
                 try {
                     catalog = CatalogUtil.load(args[1]);
@@ -54,12 +49,10 @@ public class Main {
                 Document doc = catalog.findById(args[2]);
                 CatalogUtil.view(doc);
             }
-        }
-        else if (args[0].equals("list")){
-            if (args.length!=2){
+        } else if (args[0].equals("list")) {
+            if (args.length != 2) {
                 throw new IllegalNrOfArgsException();
-            }
-            else {
+            } else {
                 Catalog catalog = null;
                 try {
                     catalog = CatalogUtil.load(args[1]);
@@ -70,8 +63,7 @@ public class Main {
                 System.out.println(list);
             }
 
-        }
-        else {
+        } else {
             throw new UnknownCommandException();
         }
     }
@@ -84,8 +76,7 @@ public class Main {
      */
 
 
-    private static void shellTestWithClasses(String[] args)
-    {
+    private static void shellTestWithClasses(String[] args) {
         if (args[0].equals("list")) {
             Commands listComm = new CommandList(args);
             try {
@@ -130,7 +121,7 @@ public class Main {
     }
 
 
-    private void testLoadView()  {
+    private void testLoadView() {
         Catalog catalog = null;
         try {
             catalog = CatalogUtil.load("./catalog.xml");

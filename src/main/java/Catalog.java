@@ -15,10 +15,9 @@ public class Catalog implements Serializable {
         this.path = path;
     }
 
-    public void add(Document doc) throws NotUniqueIdException{
-        for (Document d:documents)
-        {
-            if(d.getId().equals(doc.getId()))
+    public void add(Document doc) throws NotUniqueIdException {
+        for (Document d : documents) {
+            if (d.getId().equals(doc.getId()))
                 throw new NotUniqueIdException();
         }
         documents.add(doc);
@@ -48,11 +47,11 @@ public class Catalog implements Serializable {
      * Parcurge toate documentele din Catalogul curent
      * si il returneaza pe cel cu id-ul dat ca parametru
      *
-     * @param  id   un id asociat unui document
-     * @return      documentul cu id-ul specificat
+     * @param id un id asociat unui document
+     * @return documentul cu id-ul specificat
      */
     public Document findById(String id) {
-        for (Document document:documents)
+        for (Document document : documents)
             if (document.getId().equals(id))
                 return document;
         return null;
@@ -69,13 +68,12 @@ public class Catalog implements Serializable {
      * taguri de paragraf.
      */
 
-    public void reportHtml()
-    {
+    public void reportHtml() {
         File file = new File("./report.html");
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(file));
             bw.write(this.toHtml());
-            for (Document document:documents) {
+            for (Document document : documents) {
                 bw.write(document.toHtml());
             }
             bw.close();
@@ -85,10 +83,9 @@ public class Catalog implements Serializable {
 
     }
 
-    public String toHtml()
-    {
-        return "<p> Catalogul " + name  +
-                " cu path-ul: " + path  +
+    public String toHtml() {
+        return "<p> Catalogul " + name +
+                " cu path-ul: " + path +
                 " si documentele: " + "</p>";
     }
 

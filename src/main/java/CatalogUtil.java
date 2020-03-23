@@ -20,7 +20,8 @@ public class CatalogUtil {
     /**
      * Salveaza catalogul primit ca parametru
      * intr-un fisier XML
-     *  @param  catalog catalogul care trebuie salvat
+     *
+     * @param catalog catalogul care trebuie salvat
      */
 
     public static void save(Catalog catalog) {
@@ -54,15 +55,15 @@ public class CatalogUtil {
     /**
      * Incarca catalogul dintr-un fisier XML
      * si il returneaza.
-     * @param  path  adresa de la care se citeste
+     *
+     * @param path adresa de la care se citeste
      * @return catalogul citit
      */
 
-    public static Catalog load(String path) throws InvalidCatalogException{
-        try(XMLDecoder decoder = new XMLDecoder(new FileInputStream(path)))
-        {
+    public static Catalog load(String path) throws InvalidCatalogException {
+        try (XMLDecoder decoder = new XMLDecoder(new FileInputStream(path))) {
             return (Catalog) decoder.readObject();
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new InvalidCatalogException(e);
         }
     }
@@ -71,13 +72,13 @@ public class CatalogUtil {
     /**
      * Deschide documentul folosind metoda open sau browse
      * in functie de tipul locatiei.
-     * @param  doc documentul ce trebuie deschis pentru vizualizare
+     *
+     * @param doc documentul ce trebuie deschis pentru vizualizare
      */
 
-    public static void view(Document doc){
+    public static void view(Document doc) {
         Desktop desktop = Desktop.getDesktop();
-        if (doc.getLocation().startsWith("http"))
-        {
+        if (doc.getLocation().startsWith("http")) {
             URI uri = null;
             try {
                 uri = new URI(doc.getLocation());
@@ -85,14 +86,11 @@ public class CatalogUtil {
             } catch (URISyntaxException | IOException e) {
                 e.printStackTrace();
             }
-        }
-        else
-        {
-            try{
+        } else {
+            try {
                 File file = new File(doc.getLocation());
-            desktop.open(file);
-            }
-            catch (IOException e){
+                desktop.open(file);
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 

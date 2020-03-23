@@ -1,5 +1,5 @@
 public abstract class Commands {
-    public  String[] args;
+    public String[] args;
 
     public String[] getArgs() {
         return args;

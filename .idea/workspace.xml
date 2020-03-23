@@ -7,33 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e0b4a9-22b6-44e3-970c-140fc60b6fc2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Laborator5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Explicatii Lab5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Explicatii Lab5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Catalog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/CatalogUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Document.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/InvalidCatalogException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Catalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Catalog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Catalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CatalogUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CatalogUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CatalogUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CatalogUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CommandList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CommandList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CommandLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CommandLoad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CommandReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CommandReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CommandView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CommandView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/IllegalNrOfArgsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/IllegalNrOfArgsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/NotUniqueIdException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/NotUniqueIdException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +167,7 @@
       <workItem from="1584882591536" duration="2197000" />
       <workItem from="1584895219365" duration="392000" />
       <workItem from="1584956874512" duration="4677000" />
+      <workItem from="1584963464391" duration="135000" />
     </task>
     <servers />
   </component>
